@@ -7,12 +7,12 @@ export 'package:json_annotation/json_annotation.dart';
 export 'package:freezed_annotation/freezed_annotation.dart';
 
 export 'package:dio/dio.dart';
+
+export 'package:vector_math/vector_math.dart';
 //
 // comment me
 // export 'package:web/web.dart';
 export 'package:connectivity_plus/connectivity_plus.dart';
-
-
 
 export 'package:dartz/dartz.dart' hide State;
 export 'package:hive_flutter/hive_flutter.dart';

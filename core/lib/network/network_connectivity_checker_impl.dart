@@ -77,7 +77,7 @@ import '../enums/auth_status.dart';
           final networkResult = await _computedNetworkCheck();
           return networkResult;
         } else {
-          return NetworkConnectivityStatus.offline;
+          return (NetworkConnectivityStatus.offline,);
         }
       });
   Future<(NetworkConnectivityStatus,AuthStatus)> _computedNetworkCheck() async{

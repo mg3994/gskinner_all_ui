@@ -11,6 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  _macros:
+    sdk: dart
+    
   cupertino_icons: ^1.0.8
   web: ^1.1.0
   dio: ^5.7.0
@@ -23,6 +26,7 @@ dependencies:
   hive_flutter: ^1.1.0
   l10n:
     path: ../l10n
+  vector_math:
 
 dev_dependencies:
   flutter_test:

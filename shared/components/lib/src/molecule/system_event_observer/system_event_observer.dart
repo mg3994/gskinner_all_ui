@@ -3,10 +3,12 @@
 import 'dart:async';
 import 'dart:ui' as ui;
 
+import 'package:core/enums/auth_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/semantics.dart';
-import 'package:core/core.dart' show AppLocalizationsX, NetworkInfo,NetworkConnectivityStatus;
+import 'package:core/core.dart'
+    show AppLocalizationsX, NetworkInfo, NetworkConnectivityStatus;
 
 import '../../atom/atom.dart' show BannerHost;
 
@@ -21,7 +23,6 @@ final class SystemEventObserver extends StatefulWidget {
     this.onMemoryPressure,
     this.onAppExitRequest,
     this.onSystemAccessibilityFeaturesChanged,
-
   });
   final Widget child;
   final NetworkInfo networkInfoFactory;
@@ -34,21 +35,19 @@ final class SystemEventObserver extends StatefulWidget {
   final void Function(AccessibilityFeatures)?
       onSystemAccessibilityFeaturesChanged;
 
-
   @override
   State<SystemEventObserver> createState() => _SystemEventObserverState();
 }
 
 final class _SystemEventObserverState extends State<SystemEventObserver>
     with WidgetsBindingObserver {
-  late final Stream<NetworkConnectivityStatus> _connectivity ;
-  Stream<NetworkConnectivityStatus> _connectivityStream() async* {
+  late final Stream<(NetworkConnectivityStatus, AuthStatus)> _connectivity;
+  Stream<(NetworkConnectivityStatus, AuthStatus)> _connectivityStream() async* {
     try {
       final connectivity = widget.networkInfoFactory;
       final result = await connectivity.isConnected;
-      yield result ;
+      yield result;
       yield* connectivity.onStatusChange.distinct();
-
     } catch (e) {
       // Handle the error appropriately
       debugPrint('Connectivity error: $e');
@@ -61,7 +60,6 @@ final class _SystemEventObserverState extends State<SystemEventObserver>
     WidgetsBinding.instance.addObserver(this);
     _connectivity = _connectivityStream();
     _checkSemantics();
-
   }
 
   void _checkSemantics() {
@@ -132,24 +130,28 @@ final class _SystemEventObserverState extends State<SystemEventObserver>
 
   @override
   Widget build(BuildContext context) =>
-      StreamBuilder<NetworkConnectivityStatus>(
-        initialData: NetworkConnectivityStatus.checking, //must be here
-          stream:_connectivity,
+      StreamBuilder<(NetworkConnectivityStatus, AuthStatus)>(
+          initialData: (
+            NetworkConnectivityStatus.checking,
+            AuthStatus.checking
+          ), //must be here
+          stream: _connectivity,
           builder: (
             BuildContext context,
-            AsyncSnapshot<NetworkConnectivityStatus> streamSnapshot,
+            AsyncSnapshot<(NetworkConnectivityStatus, AuthStatus)>
+                streamSnapshot,
           ) {
-
-
             if (streamSnapshot.connectionState == ConnectionState.none) {
-              return Center(child: Text("Loading Connection"), ); //In Material //checking Internet status
+              return Center(
+                child: Text("Loading Connection"),
+              ); //In Material //checking Internet status
               //TODO: load splash here
             } else {
-              if(streamSnapshot.hasError){
-
-                return Center(child: Text(streamSnapshot.error.toString()), ); //In Material //checking Internet status error
+              if (streamSnapshot.hasError) {
+                return Center(
+                  child: Text(streamSnapshot.error.toString()),
+                ); //In Material //checking Internet status error
                 //TODO: load  error splash here
-
               }
               final result = streamSnapshot.requireData;
               return BannerHost(
@@ -179,18 +181,18 @@ final class _SystemEventObserverState extends State<SystemEventObserver>
                       child: Text(
                         switch (result) {
                           NetworkConnectivityStatus.checking =>
-                          context.l10n.status_checking,
+                            context.l10n.status_checking,
                           NetworkConnectivityStatus.offline =>
                             context.l10n.no_internet_message,
                           NetworkConnectivityStatus.appOver =>
-                          context.l10n.app_maintenance,
-
+                            context.l10n.app_maintenance,
                           _ => context.l10n.internet_connected("")
                         },
                         // (result != connection.ConnectivityResult.none)
                         //     ? context.l10n.connected(result.name.toString())
                         //     : context.l10n.notConnected,
-                        style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors. white,fontWeight: FontWeight.bold),
+                        style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center,
                       ),
                     ),

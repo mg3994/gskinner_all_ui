@@ -10,4 +10,6 @@ export 'themes/themes.dart';
 // export 'src/ticketing_icons.dart';
 export 'scroll_behavior/scroll_behavior.dart';
 
+export 'scroll_physics/scroll_physics.dart';
+
 export 'flavor/config.dart';

@@ -1,6 +1,6 @@
 enum AuthStatus {
-  Authenticated,
-  Unauthenticated,
-  BannedUser,
-  
+  checking,
+  authenticated,
+  unauthenticated,
+  bannedUser,
 }
