@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../mask/widget_model.dart';
 
-import 'package:core/core.dart' as vec32;
+
 
 class MeshCustomPainter extends CustomPainter {
   final VertexMeshInstance? _meshInstance;
@@ -35,7 +35,7 @@ class MeshCustomPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(MeshCustomPainter oldPainter) {
+  bool shouldRepaint(MeshCustomPainter oldDelegate) {
     // TODO: Do an actual state diff to check for repaint
     return true;
   }

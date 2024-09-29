@@ -41,12 +41,71 @@ dependencies:
     path: shared/components
   core:
     path: core
-  themer:
-    path: features/themer
-  updater:
-    path: features/updater
+
+  
+  
+  
+
+  basketball:
+    path: features/basketball
+  
+  bubble:
+    path: features/bubble
+  
+  constellations:
+    path: features/constellations
+  
+  dark_ink:
+    path: features/dark_ink
+  
+  dog_slider:
+    path: features/dog_slider
+  
+  drink_reward:
+    path: features/drink_reward
+  
+  ecom:
+    path: features/ecom
+  
+  fluid:
+    path: features/fluid
+  
+  gooey:
+    path: features/gooey
+  
+  indie:
+    path: features/indie
+
   l10nr:
     path: features/l10nr
+  
+  parallax:
+    path: features/parallax
+
+  particle:
+    path: features/particle
+  
+  plant: 
+    path: features/plant
+
+  sparkle:
+    path: features/sparkle
+    
+  spending:
+    path: features/spending
+
+  themer:
+    path: features/themer
+  
+  ticket:
+    path: features/ticket
+
+  updater:
+    path: features/updater
+  
+  
+
+
 
 dev_dependencies:
   flutter_test:

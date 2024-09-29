@@ -4,7 +4,7 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 import 'package:path/path.dart' as path;
 
-import 'package:vector_math/vector_math.dart' as vec32;
+import 'package:packages/packages.dart' as vec32;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -542,6 +542,7 @@ void _triangleMergeSortMerge(List<vec32.Vector4> positions, List<int> dst,
     }
   }
 }
+
 bool _compareDepth(
     List<vec32.Vector4> positions, List<int> src, int indexA, int indexB) {
   double depthA, depthB;
