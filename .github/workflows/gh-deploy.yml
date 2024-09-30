@@ -31,7 +31,7 @@ jobs:
 
     - name: "Build Flutter Web Project"
       run: |
-        flutter build --enable-experiment=macros web
+        flutter build  web --enable-experiment=macros
     - name: Setup Pages
       uses: actions/configure-pages@v5
       
