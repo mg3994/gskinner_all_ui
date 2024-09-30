@@ -25,5 +25,6 @@ export 'package:l10n/l10n.dart';
 // ?# dev_dependencies:
 
 // ? # self
+// export 'package:equatable_macro/equatable_macro.dart';
 export 'equatable/equatable.dart'; // make sure macro can lead to error  either hide it or try to use as for alias ,
 export 'macros/macros.dart';
