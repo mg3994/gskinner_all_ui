@@ -9,7 +9,11 @@ export 'package:freezed_annotation/freezed_annotation.dart';
 export 'package:dio/dio.dart';
 
 export 'package:vector_math/vector_math.dart';
-//
+export 'package:flare_flutter/flare.dart';
+export 'package:flare_flutter/flare_actor.dart';
+export 'package:flare_flutter/flare_controller.dart';
+export 'package:flutter_masked_text2/flutter_masked_text2.dart';
+
 // comment me
 // export 'package:web/web.dart';
 export 'package:connectivity_plus/connectivity_plus.dart';

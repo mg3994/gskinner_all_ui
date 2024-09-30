@@ -12,12 +12,12 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Flutter Routes'),
       ),
       body: ListView.builder(
-        itemCount: Routes.routes.length,
+        itemCount: Routes.routesPath.length,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text(Routes.routes[index]),
+            title: Text(Routes.routesPath[index]),
             onTap: () {
-              Navigator.pushNamed(context, Routes.routes[index]);
+              Navigator.pushNamed(context, Routes.routesPath[index]);
             },
           );
         },

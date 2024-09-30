@@ -22,6 +22,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  basketball:
+    dependency: "direct main"
+    description:
+      path: "features/basketball"
+      relative: true
+    source: path
+    version: "0.0.1"
   bloc:
     dependency: transitive
     description:
@@ -38,6 +45,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  bubble:
+    dependency: "direct main"
+    description:
+      path: "features/bubble"
+      relative: true
+    source: path
+    version: "0.0.1"
   characters:
     dependency: transitive
     description:
@@ -85,6 +99,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  constellations:
+    dependency: "direct main"
+    description:
+      path: "features/constellations"
+      relative: true
+    source: path
+    version: "0.0.1"
   core:
     dependency: "direct main"
     description:
@@ -108,6 +129,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  dark_ink:
+    dependency: "direct main"
+    description:
+      path: "features/dark_ink"
+      relative: true
+    source: path
+    version: "0.0.1"
   dartz:
     dependency: transitive
     description:
@@ -140,6 +168,27 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  dog_slider:
+    dependency: "direct main"
+    description:
+      path: "features/dog_slider"
+      relative: true
+    source: path
+    version: "0.0.1"
+  drink_reward:
+    dependency: "direct main"
+    description:
+      path: "features/drink_reward"
+      relative: true
+    source: path
+    version: "0.0.1"
+  ecom:
+    dependency: "direct main"
+    description:
+      path: "features/ecom"
+      relative: true
+    source: path
+    version: "0.0.1"
   fake_async:
     dependency: transitive
     description:
@@ -156,6 +205,21 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.3"
+  flare_flutter:
+    dependency: transitive
+    description:
+      name: flare_flutter
+      sha256: "99d63c60f00fac81249ce6410ee015d7b125c63d8278a30da81edf3317a1f6a0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.2"
+  fluid:
+    dependency: "direct main"
+    description:
+      path: "features/fluid"
+      relative: true
+    source: path
+    version: "0.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -182,6 +246,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_masked_text2:
+    dependency: transitive
+    description:
+      name: flutter_masked_text2
+      sha256: "5ccf6f1f8b7b7a8025e3fbaea48bff0aa7e7e9512c723e26138a0b24f31ca4d8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.9.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -200,6 +272,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.4"
+  gooey:
+    dependency: "direct main"
+    description:
+      path: "features/gooey"
+      relative: true
+    source: path
+    version: "0.0.1"
   hive:
     dependency: transitive
     description:
@@ -224,6 +303,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.2"
+  indie:
+    dependency: "direct main"
+    description:
+      path: "features/indie"
+      relative: true
+    source: path
+    version: "0.0.1"
   intl:
     dependency: transitive
     description:
@@ -333,6 +419,20 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  parallax:
+    dependency: "direct main"
+    description:
+      path: "features/parallax"
+      relative: true
+    source: path
+    version: "0.0.1"
+  particle:
+    dependency: "direct main"
+    description:
+      path: "features/particle"
+      relative: true
+    source: path
+    version: "0.0.1"
   path:
     dependency: transitive
     description:
@@ -397,6 +497,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.2"
+  plant:
+    dependency: "direct main"
+    description:
+      path: "features/plant"
+      relative: true
+    source: path
+    version: "0.0.1"
   platform:
     dependency: transitive
     description:
@@ -441,6 +548,20 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.10.0"
+  sparkle:
+    dependency: "direct main"
+    description:
+      path: "features/sparkle"
+      relative: true
+    source: path
+    version: "0.0.1"
+  spending:
+    dependency: "direct main"
+    description:
+      path: "features/spending"
+      relative: true
+    source: path
+    version: "0.0.1"
   stack_trace:
     dependency: transitive
     description:
@@ -485,6 +606,13 @@ packages:
     dependency: "direct main"
     description:
       path: "features/themer"
+      relative: true
+    source: path
+    version: "0.0.1"
+  ticket:
+    dependency: "direct main"
+    description:
+      path: "features/ticket"
       relative: true
     source: path
     version: "0.0.1"

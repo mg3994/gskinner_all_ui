@@ -1,5 +1,6 @@
 //helllo there
 
+import 'package:core/core.dart';
 import 'package:flutter/material.dart';
 
 import '/routes/routes.dart';
@@ -20,7 +21,7 @@ class _BootstrapState extends State<Bootstrap> {
   Widget build(BuildContext context) {
     return MaterialApp(
       initialRoute: AppRoutes.getInitialRoute(),
-
+      scrollBehavior: const AppScrollBehavior(),
       onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }

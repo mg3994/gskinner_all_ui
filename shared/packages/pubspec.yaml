@@ -27,6 +27,8 @@ dependencies:
   l10n:
     path: ../l10n
   vector_math:
+  flare_flutter:
+  flutter_masked_text2:
 
 dev_dependencies:
   flutter_test:

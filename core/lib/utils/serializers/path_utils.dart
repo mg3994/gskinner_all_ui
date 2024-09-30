@@ -7,7 +7,7 @@ import 'dart:ui' as ui;
 class CustomPaintUtils {
   const CustomPaintUtils();
 
-  ui.Path extractPartialPath(ui.Path path, double start, double end) {
+  static ui.Path extractPartialPath(ui.Path path, double start, double end) {
     assert(0.0 <= start && start <= 1.0);
     assert(0.0 <= end && end <= 1.0);
     assert(start < end);
