@@ -41,7 +41,7 @@ class ParticleSwipeDemoState extends State<ParticleSwipeDemo>
     // Create the "sparkle" sprite sheet for the particles:
     _spriteSheet = SpriteSheet(
       imageProvider:
-          AssetImage("images/circle_spritesheet.png", package: App.pkg),
+          AssetImage("packages/preferences/assets/.png", package: App.pkg),
       length: 15, // number of frames in the sprite sheet.
       frameWidth: 10,
       frameHeight: 10,

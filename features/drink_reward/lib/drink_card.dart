@@ -158,7 +158,7 @@ class _DrinkListCardState extends State<DrinkListCard> with TickerProviderStateM
       children: <Widget>[
         //Icon
         Image.asset(
-          "images/" + widget.drinkData.iconImage,
+          "packages/preferences/assets/" + widget.drinkData.iconImage,
           fit: BoxFit.fitWidth,
           width: 50,
           package: App.pkg,

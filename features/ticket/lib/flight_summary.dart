@@ -10,14 +10,25 @@ class FlightSummary extends StatelessWidget {
   final SummaryTheme theme;
   final bool isOpen;
 
-  const FlightSummary({Key? key, required this.boardingPass, this.theme = SummaryTheme.light, this.isOpen = false})
+  const FlightSummary(
+      {Key? key,
+      required this.boardingPass,
+      this.theme = SummaryTheme.light,
+      this.isOpen = false})
       : super(key: key);
 
-  Color get mainTextColor => (theme == SummaryTheme.dark) ? Colors.white : Color(0xFF083e64);
-  Color get secondaryTextColor => (theme == SummaryTheme.dark) ? Color(0xff61849c) : Color(0xFF838383);
-  Color get separatorColor => (theme == SummaryTheme.dark) ? Color(0xffeaeaea) : Color(0xff396583);
+  Color get mainTextColor =>
+      (theme == SummaryTheme.dark) ? Colors.white : Color(0xFF083e64);
+  Color get secondaryTextColor =>
+      (theme == SummaryTheme.dark) ? Color(0xff61849c) : Color(0xFF838383);
+  Color get separatorColor =>
+      (theme == SummaryTheme.dark) ? Color(0xffeaeaea) : Color(0xff396583);
 
-  TextStyle get bodyTextStyle => TextStyle(color: mainTextColor, fontSize: 13, fontFamily: 'Oswald', package: App.pkg);
+  TextStyle get bodyTextStyle => TextStyle(
+      color: mainTextColor,
+      fontSize: 13,
+      fontFamily: 'Oswald',
+      package: App.pkg);
 
   bool get isLight => theme == SummaryTheme.light;
 
@@ -39,9 +50,15 @@ class FlightSummary extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 18.0),
               child: Stack(
                 children: <Widget>[
-                  Align(alignment: Alignment.centerLeft, child: _buildTicketOrigin()),
-                  Align(alignment: Alignment.center, child: _buildTicketDuration()),
-                  Align(alignment: Alignment.centerRight, child: _buildTicketDestination())
+                  Align(
+                      alignment: Alignment.centerLeft,
+                      child: _buildTicketOrigin()),
+                  Align(
+                      alignment: Alignment.center,
+                      child: _buildTicketDuration()),
+                  Align(
+                      alignment: Alignment.centerRight,
+                      child: _buildTicketDestination())
                 ],
               ),
             ),
@@ -60,7 +77,10 @@ class FlightSummary extends StatelessWidget {
           )
         : BoxDecoration(
             borderRadius: BorderRadius.circular(4.0),
-            image: DecorationImage(image: AssetImage('images/bg_blue.png', package: App.pkg), fit: BoxFit.cover),
+            image: DecorationImage(
+                image: AssetImage('packages/preferences/assets/bg_blue.png',
+                    package: App.pkg),
+                fit: BoxFit.cover),
           );
   }
 
@@ -71,7 +91,8 @@ class FlightSummary extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4.0),
-            child: Image.asset('images/flutter-logo.png', width: 8, package: App.pkg),
+            child: Image.asset('packages/preferences/assets/flutter-logo.png',
+                width: 8, package: App.pkg),
           ),
           Text('Fluttair'.toUpperCase(),
               style: TextStyle(
@@ -86,7 +107,8 @@ class FlightSummary extends StatelessWidget {
     } else {
       return Padding(
         padding: const EdgeInsets.only(top: 2.0),
-        child: Image.asset('images/logo_white.png', height: 12, package: App.pkg),
+        child: Image.asset('packages/preferences/assets/logo_white.png',
+            height: 12, package: App.pkg),
       );
     }
   }
@@ -101,12 +123,17 @@ class FlightSummary extends StatelessWidget {
 
   Widget _buildTicketHeader(context) {
     var headerStyle = TextStyle(
-        fontFamily: 'OpenSans', fontWeight: FontWeight.bold, fontSize: 11, color: Color(0xFFe46565), package: App.pkg);
+        fontFamily: 'OpenSans',
+        fontWeight: FontWeight.bold,
+        fontSize: 11,
+        color: Color(0xFFe46565),
+        package: App.pkg);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Text(boardingPass.passengerName.toUpperCase(), style: headerStyle),
-        Text('BOARDING ${boardingPass.boardingTime.format(context)}', style: headerStyle),
+        Text('BOARDING ${boardingPass.boardingTime.format(context)}',
+            style: headerStyle),
       ],
     );
   }
@@ -118,14 +145,19 @@ class FlightSummary extends StatelessWidget {
           boardingPass.origin.code.toUpperCase(),
           style: bodyTextStyle.copyWith(fontSize: 42),
         ),
-        Text(boardingPass.origin.city, style: bodyTextStyle.copyWith(color: secondaryTextColor)),
+        Text(boardingPass.origin.city,
+            style: bodyTextStyle.copyWith(color: secondaryTextColor)),
       ],
     );
   }
 
   Widget _buildTicketDuration() {
     String routeType = isLight ? 'blue' : 'white';
-    final planeImage = Image.asset('images/airplane_$routeType.png', height: 20, fit: BoxFit.contain, package: App.pkg);
+    final planeImage = Image.asset(
+        'packages/preferences/assets/airplane_$routeType.png',
+        height: 20,
+        fit: BoxFit.contain,
+        package: App.pkg);
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -137,12 +169,18 @@ class FlightSummary extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
-                Image.asset('images/planeroute_$routeType.png', fit: BoxFit.cover, package: App.pkg),
-                isLight ? planeImage : _AnimatedSlideToRight(child: planeImage, isOpen: isOpen)
+                Image.asset(
+                    'packages/preferences/assets/planeroute_$routeType.png',
+                    fit: BoxFit.cover,
+                    package: App.pkg),
+                isLight
+                    ? planeImage
+                    : _AnimatedSlideToRight(child: planeImage, isOpen: isOpen)
               ],
             ),
           ),
-          Text(boardingPass.duration.toString(), textAlign: TextAlign.center, style: bodyTextStyle),
+          Text(boardingPass.duration.toString(),
+              textAlign: TextAlign.center, style: bodyTextStyle),
         ],
       ),
     );
@@ -165,7 +203,8 @@ class FlightSummary extends StatelessWidget {
   }
 
   Widget _buildBottomIcon() {
-    IconData icon = isLight ? Icons.keyboard_arrow_down : Icons.keyboard_arrow_up;
+    IconData icon =
+        isLight ? Icons.keyboard_arrow_down : Icons.keyboard_arrow_up;
     return Icon(
       icon,
       color: mainTextColor,
@@ -178,14 +217,18 @@ class _AnimatedSlideToRight extends StatefulWidget {
   final Widget child;
   final bool isOpen;
 
-  const _AnimatedSlideToRight({Key? key, required this.child, required this.isOpen}) : super(key: key);
+  const _AnimatedSlideToRight(
+      {Key? key, required this.child, required this.isOpen})
+      : super(key: key);
 
   @override
   _AnimatedSlideToRightState createState() => _AnimatedSlideToRightState();
 }
 
-class _AnimatedSlideToRightState extends State<_AnimatedSlideToRight> with SingleTickerProviderStateMixin {
-  late AnimationController _controller = AnimationController(vsync: this, duration: Duration(milliseconds: 1700));
+class _AnimatedSlideToRightState extends State<_AnimatedSlideToRight>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller =
+      AnimationController(vsync: this, duration: Duration(milliseconds: 1700));
 
   @override
   void dispose() {

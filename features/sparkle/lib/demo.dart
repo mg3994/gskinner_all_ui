@@ -92,14 +92,17 @@ class _SparklePartyDemoState extends State<SparklePartyDemo>
         children: <Widget>[
           //Main Background image
           Positioned.fill(
-            child: Image.asset("assets/sparkleparty_bg.png",
-                fit: BoxFit.cover, package: App.pkg),
+            child: Image.asset(
+                "packages/preferences/assets/sparkleparty_bg.png",
+                fit: BoxFit.cover,
+                package: App.pkg),
           ),
 
           //Centered logo png
           Center(
-            child:
-                Image.asset("assets/sparkleparty_logo.png", package: App.pkg),
+            child: Image.asset(
+                "packages/preferences/assets/sparkleparty_logo.png",
+                package: App.pkg),
           ),
           Opacity(
             opacity: 1.0 - _transitionController.value,
@@ -112,7 +115,7 @@ class _SparklePartyDemoState extends State<SparklePartyDemo>
                     size: constraints.biggest,
                     spriteSheet: SpriteSheet(
                       imageProvider: AssetImage(
-                          "assets/sparkleparty_spritesheet_2.png",
+                          "packages/preferences/assets/sparkleparty_spritesheet_2.png",
                           package: App.pkg),
                       length: 16, // number of frames in the sprite sheet.
                       frameWidth: 64,
@@ -125,7 +128,8 @@ class _SparklePartyDemoState extends State<SparklePartyDemo>
           ),
           IgnorePointer(
             child: Center(
-              child: Image.asset("assets/sparkleparty_logo_outline.png",
+              child: Image.asset(
+                  "packages/preferences/assets/sparkleparty_logo_outline.png",
                   package: App.pkg),
             ),
           ),

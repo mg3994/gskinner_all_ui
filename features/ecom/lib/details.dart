@@ -28,7 +28,7 @@ class ProductDetailView extends StatelessWidget {
                   width: frameWidth,
                   height: frameHeight,
                   child: Sprite(
-                      image: AssetImage("images/speaker_sprite.png",
+                      image: AssetImage("packages/preferences/assets/speaker_sprite.png",
                           package: App.pkg),
                       frameWidth: 360,
                       frameHeight: 500,

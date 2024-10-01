@@ -11,7 +11,12 @@ class ContentCard extends StatefulWidget {
   final String title;
   final String subtitle;
 
-  ContentCard({required this.color, this.title = "", required this.subtitle, required this.altColor}) : super();
+  ContentCard(
+      {required this.color,
+      this.title = "",
+      required this.subtitle,
+      required this.altColor})
+      : super();
 
   @override
   _ContentCardState createState() => _ContentCardState();
@@ -50,10 +55,14 @@ class _ContentCardState extends State<ContentCard> {
           fit: StackFit.expand,
           children: <Widget>[
             Transform.translate(
-              offset: Offset(-(scaleX - 1) / 2 * width, -(scaleY - 1) / 2 * height + offsetY),
+              offset: Offset(-(scaleX - 1) / 2 * width,
+                  -(scaleY - 1) / 2 * height + offsetY),
               child: Transform(
                 transform: Matrix4.diagonal3Values(scaleX, scaleY, 1),
-                child: Image.asset('images/Bg-${widget.color}.png', fit: BoxFit.cover, package: App.pkg),
+                child: Image.asset(
+                    'packages/preferences/assets/Bg-${widget.color}.png',
+                    fit: BoxFit.cover,
+                    package: App.pkg),
               ),
             ),
             Container(
@@ -68,7 +77,7 @@ class _ContentCardState extends State<ContentCard> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20.0),
                         child: Image.asset(
-                          'images/Illustration-${widget.color}.png',
+                          'packages/preferences/assets/Illustration-${widget.color}.png',
                           fit: BoxFit.contain,
                           package: App.pkg,
                         ),
@@ -76,7 +85,11 @@ class _ContentCardState extends State<ContentCard> {
                     ),
 
                     //Slider circles
-                    Container(height: 14, child: Image.asset('images/Slider-${widget.color}.png', package: App.pkg)),
+                    Container(
+                        height: 14,
+                        child: Image.asset(
+                            'packages/preferences/assets/Slider-${widget.color}.png',
+                            package: App.pkg)),
 
                     //Bottom content
                     Expanded(
@@ -104,7 +117,11 @@ class _ContentCardState extends State<ContentCard> {
         Text(widget.title,
             textAlign: TextAlign.center,
             style: TextStyle(
-                height: 1.2, fontSize: 30.0, fontFamily: 'DMSerifDisplay', color: Colors.white, package: App.pkg)),
+                height: 1.2,
+                fontSize: 30.0,
+                fontFamily: 'DMSerifDisplay',
+                color: Colors.white,
+                package: App.pkg)),
         Text(widget.subtitle,
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -117,7 +134,8 @@ class _ContentCardState extends State<ContentCard> {
           padding: const EdgeInsets.symmetric(horizontal: 36.0),
           child: MaterialButton(
             elevation: 0,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
             color: widget.altColor,
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),

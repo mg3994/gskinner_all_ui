@@ -101,7 +101,8 @@ class Indie3dPage extends StatelessWidget {
               child: Image(
                 width: appSize.width,
                 fit: BoxFit.none,
-                image: AssetImage('images/noise.png', package: App.pkg),
+                image: AssetImage('packages/preferences/assets/noise.png',
+                    package: App.pkg),
               ),
             ),
           } else ...{

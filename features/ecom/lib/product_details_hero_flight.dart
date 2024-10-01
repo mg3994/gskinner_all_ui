@@ -27,7 +27,7 @@ class ProductDetailsHeroFlight extends StatelessWidget {
           width: frameWidth,
           height: frameHeight,
           child: AnimatedSprite(
-            image: AssetImage("images/speaker_sprite.png", package: App.pkg),
+            image: AssetImage("packages/preferences/assets/speaker_sprite.png", package: App.pkg),
             frameWidth: 360,
             frameHeight: 500,
             animation: Tween(begin: 0.0, end: 59.0).animate(CurvedAnimation(curve: Interval(0, .8), parent: animation)),

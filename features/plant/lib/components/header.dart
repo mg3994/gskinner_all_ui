@@ -15,9 +15,12 @@ class Header extends StatelessWidget {
           width: screenSize.width,
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('images/plant_header_background.png', package: App.pkg),
+                  image: AssetImage(
+                      'packages/preferences/assets/plant_header_background.png',
+                      package: App.pkg),
                   fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(Colors.white60, BlendMode.screen))),
+                  colorFilter:
+                      ColorFilter.mode(Colors.white60, BlendMode.screen))),
           child: SafeArea(
             child: Padding(
               padding: const EdgeInsets.only(top: 8.0),

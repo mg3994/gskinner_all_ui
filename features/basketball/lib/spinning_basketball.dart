@@ -2,7 +2,6 @@ import 'dart:math' as math;
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 
-
 import 'scaling_info.dart';
 import 'main.dart';
 
@@ -22,7 +21,8 @@ class SpinningBasketball extends StatefulWidget {
   final AnimationController controller;
   final double maxHeight;
 
-  SpinningBasketball({required this.controller, required this.maxHeight}) : super(key: ValueKey(controller));
+  SpinningBasketball({required this.controller, required this.maxHeight})
+      : super(key: ValueKey(controller));
 
   @override
   State createState() {
@@ -30,7 +30,8 @@ class SpinningBasketball extends StatefulWidget {
   }
 }
 
-class _SpinningBasketballState extends State<SpinningBasketball> with SingleTickerProviderStateMixin {
+class _SpinningBasketballState extends State<SpinningBasketball>
+    with SingleTickerProviderStateMixin {
   final double _maxHeight;
 
   final AnimationController _controller;
@@ -77,23 +78,26 @@ class _SpinningBasketballState extends State<SpinningBasketball> with SingleTick
         weight: 0.6,
       ),
       TweenSequenceItem(
-        tween: Tween<double>(begin: 0.12, end: -0.12).chain(CurveTween(curve: cosCurve)),
+        tween: Tween<double>(begin: 0.12, end: -0.12)
+            .chain(CurveTween(curve: cosCurve)),
         weight: 4.2,
       ),
       TweenSequenceItem(
-        tween: Tween<double>(begin: 0.12, end: 0.0).chain(CurveTween(curve: Curves.easeInSine)),
+        tween: Tween<double>(begin: 0.12, end: 0.0)
+            .chain(CurveTween(curve: Curves.easeInSine)),
         weight: 1,
       ),
     ]).animate(_controller);
 
     _yAnimation = TweenSequence<double>([
       TweenSequenceItem(
-        tween: Tween<double>(begin: 1.70, end: -0.72).chain(CurveTween(curve: Curves.easeOutSine)),
+        tween: Tween<double>(begin: 1.70, end: -0.72)
+            .chain(CurveTween(curve: Curves.easeOutSine)),
         weight: 1.3,
       ),
       TweenSequenceItem(
-        tween: Tween<double>(begin: -0.72, end: 0.02)
-            .chain(CurveTween(curve: const SineCurve(start: -math.pi / 2, length: math.pi))),
+        tween: Tween<double>(begin: -0.72, end: 0.02).chain(CurveTween(
+            curve: const SineCurve(start: -math.pi / 2, length: math.pi))),
         weight: 0.7,
       ),
       TweenSequenceItem(
@@ -101,7 +105,8 @@ class _SpinningBasketballState extends State<SpinningBasketball> with SingleTick
         weight: 4.00,
       ),
       TweenSequenceItem(
-        tween: Tween<double>(begin: 0.02, end: 0.30).chain(CurveTween(curve: Curves.easeInCubic)),
+        tween: Tween<double>(begin: 0.02, end: 0.30)
+            .chain(CurveTween(curve: Curves.easeInCubic)),
         weight: 1,
       ),
     ]).animate(_controller);
@@ -112,7 +117,8 @@ class _SpinningBasketballState extends State<SpinningBasketball> with SingleTick
         weight: 2,
       ),
       TweenSequenceItem(
-        tween: Tween<double>(begin: 1.05, end: 0.9).chain(CurveTween(curve: sineCurve)),
+        tween: Tween<double>(begin: 1.05, end: 0.9)
+            .chain(CurveTween(curve: sineCurve)),
         weight: 4,
       ),
       TweenSequenceItem(
@@ -144,12 +150,15 @@ class _SpinningBasketballState extends State<SpinningBasketball> with SingleTick
 
     // Draw the ball from a sprite sheet, position according to the animation
     return Positioned(
-      left: _xAnimation.value * 160 * ScalingInfo.scaleX + appSize.width / 2 - scaledWidth / 2,
+      left: _xAnimation.value * 160 * ScalingInfo.scaleX +
+          appSize.width / 2 -
+          scaledWidth / 2,
       top: _yAnimation.value * _maxHeight / 2 + rimY - scaledHeight,
       width: scaledWidth,
       height: scaledHeight,
       child: AnimatedSprite(
-        image: AssetImage('assets/basketball.png', package: App.pkg),
+        image: AssetImage('packages/preferences/assets/basketball.png',
+            package: App.pkg),
         frameWidth: 400,
         frameHeight: 400,
         animation: _spriteAnimation,

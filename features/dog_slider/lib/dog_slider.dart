@@ -129,7 +129,7 @@ class _DogSliderState extends State<DogSlider> with TickerProviderStateMixin {
   Widget _buildBallAndArrowStack() {
     return Stack(
       children: <Widget>[
-        Image.asset("images/ball.png", package: App.pkg),
+        Image.asset("packages/preferences/assets/ball.png", package: App.pkg),
         Transform.translate(
           offset: Offset(26, -2),
           child: BouncingWidget(

@@ -10,7 +10,10 @@ class PullToRefreshContainer extends StatelessWidget {
   final double height;
   final ChangeNotifier refreshNotifier;
 
-  PullToRefreshContainer({required this.maxHeight, required this.height, required this.refreshNotifier});
+  PullToRefreshContainer(
+      {required this.maxHeight,
+      required this.height,
+      required this.refreshNotifier});
 
   @override
   Widget build(context) {
@@ -38,15 +41,18 @@ class BasketballPTRContainerAnimation extends StatefulWidget {
   final double height;
   final ChangeNotifier refreshNotifier;
 
-  BasketballPTRContainerAnimation({this.maxHeight = 180, this.height = 0, required this.refreshNotifier});
+  BasketballPTRContainerAnimation(
+      {this.maxHeight = 180, this.height = 0, required this.refreshNotifier});
 
   @override
   State createState() {
-    return _BasketballPTRContainerAnimationState(maxHeight, height, refreshNotifier);
+    return _BasketballPTRContainerAnimationState(
+        maxHeight, height, refreshNotifier);
   }
 }
 
-class _BasketballPTRContainerAnimationState extends State<BasketballPTRContainerAnimation>
+class _BasketballPTRContainerAnimationState
+    extends State<BasketballPTRContainerAnimation>
     with SingleTickerProviderStateMixin {
   final double _maxHeight;
   double _height;
@@ -56,15 +62,18 @@ class _BasketballPTRContainerAnimationState extends State<BasketballPTRContainer
 
   ChangeNotifier _refreshNotifier;
 
-  _BasketballPTRContainerAnimationState(this._maxHeight, this._height, this._refreshNotifier);
+  _BasketballPTRContainerAnimationState(
+      this._maxHeight, this._height, this._refreshNotifier);
 
   @override
   void initState() {
-    _controller = AnimationController(vsync: this, duration: const Duration(seconds: 2, milliseconds: 500));
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(seconds: 2, milliseconds: 500));
 
     _scaleAnimation = TweenSequence<double>([
       TweenSequenceItem(
-        tween: Tween<double>(begin: 0.5, end: 0.0).chain(CurveTween(curve: ElasticOutCurve(0.65)).chain(
+        tween: Tween<double>(begin: 0.5, end: 0.0)
+            .chain(CurveTween(curve: ElasticOutCurve(0.65)).chain(
           Tween<double>(begin: 0.0, end: 0.5),
         )),
         weight: 2.0,
@@ -119,7 +128,9 @@ class _BasketballPTRContainerAnimationState extends State<BasketballPTRContainer
   Widget build(context) {
     final appSize = MediaQuery.of(context).size;
 
-    final scale = 0.8 - Curves.easeIn.transform((_height / _maxHeight) / 2.0) * _scaleAnimation.value;
+    final scale = 0.8 -
+        Curves.easeIn.transform((_height / _maxHeight) / 2.0) *
+            _scaleAnimation.value;
 
     final centerX = appSize.width / 2;
     final backboardWidth = 0.8 * _maxHeight * scale;
@@ -166,24 +177,30 @@ class _BasketballPTRContainerAnimationState extends State<BasketballPTRContainer
         left: centerX - backboardWidth / 2,
         top: backboardY - backboardHeight / 2,
         width: backboardWidth,
-        child: Image(image: AssetImage('assets/backboard.png', package: App.pkg)),
+        child: Image(
+            image: AssetImage('packages/preferences/assets/backboard.png',
+                package: App.pkg)),
       ),
       Positioned(
         left: centerX - netWidth / 2,
         top: netY - netHeight / 2,
         width: netWidth,
-        child: Image(image: AssetImage('assets/net.png', package: App.pkg)),
+        child: Image(
+            image: AssetImage('packages/preferences/assets/net.png',
+                package: App.pkg)),
       ),
       Positioned(
         left: centerX - rimWidth / 2,
         top: rimY - rimHeight / 2,
         width: rimWidth,
-        child: Image(image: AssetImage('assets/rim.png', package: App.pkg)),
+        child: Image(
+            image: AssetImage('packages/preferences/assets/rim.png',
+                package: App.pkg)),
       ),
     ];
 
-    children.insert(
-        _controller.value > 0.28 ? 2 : 4, SpinningBasketball(controller: _controller, maxHeight: _maxHeight));
+    children.insert(_controller.value > 0.28 ? 2 : 4,
+        SpinningBasketball(controller: _controller, maxHeight: _maxHeight));
 
     return Stack(
       children: children,

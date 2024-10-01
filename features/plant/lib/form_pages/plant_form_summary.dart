@@ -15,7 +15,8 @@ class PlantFormSummary extends StatelessWidget {
   final double? pageSize;
   final bool isHidden;
 
-  const PlantFormSummary({Key? key, this.pageSize, this.isHidden = false}) : super(key: key);
+  const PlantFormSummary({Key? key, this.pageSize, this.isHidden = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +64,10 @@ class PlantFormSummary extends StatelessWidget {
               decoration: BoxDecoration(
                   border: Border.all(color: Styles.grayColor),
                   borderRadius: BorderRadius.circular(4),
-                  image: DecorationImage(image: AssetImage('images/plant_header_background.png', package: App.pkg))),
+                  image: DecorationImage(
+                      image: AssetImage(
+                          'packages/preferences/assets/plant_header_background.png',
+                          package: App.pkg))),
             ),
             Positioned(
                 top: -10,
@@ -83,7 +87,8 @@ class PlantFormSummary extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Red Potted \nPlant w/ \nWhite Bowl', style: Styles.productName),
+            Text('Red Potted \nPlant w/ \nWhite Bowl',
+                style: Styles.productName),
             Text('\$34.00', style: Styles.productPrice)
           ],
         )
@@ -128,11 +133,14 @@ class PlantFormSummary extends StatelessWidget {
 
   Widget _buildOrderSpecialInstructions(BuildContext context) {
     String name = 'Special Instructions';
-    SharedFormState sharedState = Provider.of<SharedFormState>(context, listen: false);
+    SharedFormState sharedState =
+        Provider.of<SharedFormState>(context, listen: false);
     var values = sharedState.valuesByName;
     return TextFormField(
       onChanged: (value) => values[FormKeys.instructions] = value,
-      initialValue: values.containsKey(FormKeys.instructions) ? values[FormKeys.instructions] : "",
+      initialValue: values.containsKey(FormKeys.instructions)
+          ? values[FormKeys.instructions]
+          : "",
       style: Styles.inputLabel,
       decoration: Styles.getInputDecoration(helper: name),
       minLines: 4,

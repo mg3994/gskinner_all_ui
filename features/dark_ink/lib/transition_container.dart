@@ -1,7 +1,6 @@
 import 'package:components/components.dart';
 import 'package:flutter/material.dart';
 
-
 import 'main.dart';
 
 class TransitionContainer extends StatefulWidget {
@@ -15,9 +14,11 @@ class TransitionContainer extends StatefulWidget {
   }
 }
 
-class _TransitionContainerState extends State<TransitionContainer> with SingleTickerProviderStateMixin {
+class _TransitionContainerState extends State<TransitionContainer>
+    with SingleTickerProviderStateMixin {
   _TransitionContainerState(this._childBackground);
-  late final AnimationController _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 1500));
+  late final AnimationController _controller = AnimationController(
+      vsync: this, duration: const Duration(milliseconds: 1500));
   late final Animation<double> _animation = TweenSequence(
     <TweenSequenceItem<double>>[
       TweenSequenceItem<double>(
@@ -31,7 +32,9 @@ class _TransitionContainerState extends State<TransitionContainer> with SingleTi
     ],
   ).animate(_controller);
 
-  final ImageProvider _image = AssetImage('assets/images/ink_mask.png', package: App.pkg);
+  final ImageProvider _image = AssetImage(
+      'packages/preferences/assets/images/ink_mask.png',
+      package: App.pkg);
 
   Widget? _childForeground;
   Widget? _childBackground;

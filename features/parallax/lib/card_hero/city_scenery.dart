@@ -95,7 +95,7 @@ class CityScenery extends StatelessWidget {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Image.asset(
-                'images/Road.png',
+                'packages/preferences/assets/Road.png',
                 width: double.infinity,
                 height: screenSize.height * scale - 5,
                 fit: BoxFit.fitHeight,
@@ -220,7 +220,7 @@ class _CloudsState extends State<_Clouds> with SingleTickerProviderStateMixin {
           top: screenSize.height * .065,
           left: dxPosition - (screenSize.width * 0.65),
           child: Image.asset(
-            'images/CloudLarge.png',
+            'packages/preferences/assets/CloudLarge.png',
             width: screenSize.width * .2,
             package: App.pkg,
           ),
@@ -229,7 +229,7 @@ class _CloudsState extends State<_Clouds> with SingleTickerProviderStateMixin {
           top: screenSize.height * .12,
           left: dxPosition * .5,
           child: Image.asset(
-            'images/CloudSmall.png',
+            'packages/preferences/assets/CloudSmall.png',
             width: screenSize.width * .15,
             package: App.pkg,
           ),
@@ -337,7 +337,7 @@ class _Leaf extends StatelessWidget {
       child: Rotation3d(
           rotationY: rotation * rotationScale,
           child: Image.asset(
-            'images/BlowingLeaf.png',
+            'packages/preferences/assets/BlowingLeaf.png',
             width: screenSize.width * .015 + Random().nextDouble() * .01,
             package: App.pkg,
           )),
@@ -378,7 +378,7 @@ class _Trees extends StatelessWidget {
   Widget _getTreeAsset(Size screenSize, bool isFront) {
     double sizeProportion = isFront ? .08 : .05;
     return Image.asset(
-      'images/Tree.png',
+      'packages/preferences/assets/Tree.png',
       width: screenSize.width * sizeProportion,
       package: App.pkg,
     );
@@ -404,21 +404,21 @@ class _CityImage extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               children: <Widget>[
                 Image.asset(
-                  'images/${city.name}/${city.name}-Back.png',
+                  'packages/preferences/assets/${city.name}/${city.name}-Back.png',
                   package: App.pkg,
                 ),
                 Image.asset(
-                  'images/${city.name}/${city.name}-Middle.png',
+                  'packages/preferences/assets/${city.name}/${city.name}-Middle.png',
                   package: App.pkg,
                 ),
                 Image.asset(
-                  'images/${city.name}/${city.name}-Front.png',
+                  'packages/preferences/assets/${city.name}/${city.name}-Front.png',
                   package: App.pkg,
                 ),
               ],
             )),
         Image.asset(
-          'images/Ground.png',
+          'packages/preferences/assets/Ground.png',
           width: size.width,
           package: App.pkg,
         )

@@ -5,14 +5,24 @@ import 'main.dart';
 typedef FXChangeCallback = void Function(int);
 
 class FXSwitcher extends StatelessWidget {
-  static final List<String> buttonNames = ['Waterfall', 'Fireworks', 'Comet', 'Pinwheel'];
+  static final List<String> buttonNames = [
+    'Waterfall',
+    'Fireworks',
+    'Comet',
+    'Pinwheel'
+  ];
   static final List<String> selectedPaths = [
     'waterfall-selected',
     'fireworks-selected',
     'comet-selected',
     'pinwheel-selected'
   ];
-  static final List<String> paths = ['waterfall-idle', 'fireworks-idle', 'comet-idle', 'pinwheel-idle'];
+  static final List<String> paths = [
+    'waterfall-idle',
+    'fireworks-idle',
+    'comet-idle',
+    'pinwheel-idle'
+  ];
 
   final int activeEffect;
   final FXChangeCallback? callback;
@@ -32,7 +42,7 @@ class FXSwitcher extends StatelessWidget {
               .map((int index) => _FXSwitcherButton(
                     name: buttonNames[index],
                     image: AssetImage(
-                        'assets/buttons/${activeEffect == index ? selectedPaths[index] : paths[index]}.png',
+                        'packages/preferences/assets/buttons/${activeEffect == index ? selectedPaths[index] : paths[index]}.png',
                         package: App.pkg),
                     handleTap: () => _handleButtonPress(index),
                   ))
@@ -70,7 +80,11 @@ class _FXSwitcherButton extends StatelessWidget {
       ),
       Text(
         name,
-        style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 12, package: App.pkg),
+        style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+            fontSize: 12,
+            package: App.pkg),
       ),
     ]);
   }

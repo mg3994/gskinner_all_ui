@@ -86,7 +86,7 @@ class _ProductDetailZoomDemoState extends State<ProductDetailZoomDemo>
                   width: _frameWidth,
                   height: _frameHeight,
                   child: Sprite(
-                      image: AssetImage("images/speaker_sprite.png",
+                      image: AssetImage("packages/preferences/assets/speaker_sprite.png",
                           package: App.pkg),
                       frameWidth: 360,
                       frameHeight: 500,
@@ -217,7 +217,7 @@ class _ProductDetailZoomDemoState extends State<ProductDetailZoomDemo>
       actions: <Widget>[
         Padding(
           padding: const EdgeInsets.only(right: 24.0),
-          child: Image.asset('images/shopping_bag.png',
+          child: Image.asset('packages/preferences/assets/shopping_bag.png',
               width: 20, height: 20, fit: BoxFit.contain, package: App.pkg),
         )
       ],

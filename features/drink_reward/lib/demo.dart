@@ -78,7 +78,7 @@ class _DrinkRewardsListDemoState extends State<DrinkRewardsListDemo> {
           child: Container(
             width: double.infinity,
             child: Image.asset(
-              "images/Header-Dark.png",
+              "packages/preferences/assets/Header-Dark.png",
               fit: BoxFit.fill,
               package: App.pkg,
             ),

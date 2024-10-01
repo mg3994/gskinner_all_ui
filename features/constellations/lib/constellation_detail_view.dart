@@ -65,14 +65,14 @@ class _ConstellationDetailViewState extends State<ConstellationDetailView> with 
                 child: Stack(
                   children: <Widget>[
                     Image.asset(
-                      "images/${widget.data.image}-Constellation@2x.png",
+                     "packages/preferences/assets/${widget.data.image}-Constellation@2x.png",
                       filterQuality: FilterQuality.high,
                       package: App.pkg,
                     ),
                     Opacity(
                       opacity: _textAlphaTween.value,
                       child:
-                          Image.asset("images/${widget.data.image}-Text@2x.png", fit: BoxFit.contain, package: App.pkg),
+                          Image.asset("packages/preferences/assets/${widget.data.image}-Text@2x.png", fit: BoxFit.contain, package: App.pkg),
                     ),
                   ],
                 ),

@@ -56,8 +56,11 @@ class _DarkInkBarState extends State<DarkInkBar>
     ],
   ).animate(_controller);
 
-  final _moonIcon = AssetImage('assets/images/icon-moon.png', package: App.pkg);
-  final _sunIcon = AssetImage('assets/images/icon-sun.png', package: App.pkg);
+  final _moonIcon = AssetImage(
+      'packages/preferences/assets/images/icon-moon.png',
+      package: App.pkg);
+  final _sunIcon = AssetImage('packages/preferences/assets/images/icon-sun.png',
+      package: App.pkg);
   late ImageProvider _darkModeToggleIconImage = _moonIcon;
 
   @override
@@ -115,7 +118,8 @@ class _DarkInkBarState extends State<DarkInkBar>
                           const WidgetStatePropertyAll(Colors.transparent),
                       foregroundColor: WidgetStatePropertyAll(foregroundColor),
                     ),
-                    child: ImageIcon(AssetImage('assets/images/icon-r.png',
+                    child: ImageIcon(AssetImage(
+                        'packages/preferences/assets/images/icon-r.png',
                         package: App.pkg)),
                   ),
                   TextButton(

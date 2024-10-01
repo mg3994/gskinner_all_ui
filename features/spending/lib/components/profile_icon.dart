@@ -6,7 +6,8 @@ class ProfileIcon extends StatelessWidget {
   Widget build(context) {
     return Padding(
       padding: EdgeInsets.all(16),
-      child: Image.asset('images/headshot.png', package: App.pkg),
+      child: Image.asset('packages/preferences/assets/headshot.png',
+          package: App.pkg),
     );
   }
 }

@@ -45,8 +45,12 @@ class CityDetailsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildFlightWidget(BuildContext flightContext, Animation<double> heroAnimation,
-      HeroFlightDirection flightDirection, BuildContext fromHeroContext, BuildContext toHeroContext) {
+  Widget _buildFlightWidget(
+      BuildContext flightContext,
+      Animation<double> heroAnimation,
+      HeroFlightDirection flightDirection,
+      BuildContext fromHeroContext,
+      BuildContext toHeroContext) {
     return AnimatedBuilder(
       animation: heroAnimation,
       builder: (context, child) {
@@ -75,7 +79,8 @@ class CityDetailsPage extends StatelessWidget {
                   left: Styles.hzScreenPadding * 1.5,
                   right: Styles.hzScreenPadding * 1.5,
                 ),
-                child: Text(city.information, style: Styles.cardSubtitle, textAlign: TextAlign.center),
+                child: Text(city.information,
+                    style: Styles.cardSubtitle, textAlign: TextAlign.center),
               ),
             ],
           ),
@@ -84,7 +89,8 @@ class CityDetailsPage extends StatelessWidget {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.only(bottom: 16.0),
-                child: Text('Experiences for every interest'.toUpperCase(), style: Styles.detailsTitleSection),
+                child: Text('Experiences for every interest'.toUpperCase(),
+                    style: Styles.detailsTitleSection),
               ),
               _ExperiencesSection()
             ],
@@ -116,7 +122,10 @@ class _ExperiencesSection extends StatelessWidget {
         height: screenSize.height * .15,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[for (var experience in experiences) _buildExperienceCard(screenSize, experience)],
+          children: <Widget>[
+            for (var experience in experiences)
+              _buildExperienceCard(screenSize, experience)
+          ],
         ));
   }
 
@@ -131,7 +140,7 @@ class _ExperiencesSection extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Image.asset(
-                'images/Small-Cards/${experience.replaceAll(' ', '')}.png',
+                'packages/preferences/assets/Small-Cards/${experience.replaceAll(' ', '')}.png',
                 fit: BoxFit.cover,
                 width: double.infinity,
                 package: App.pkg,

@@ -24,9 +24,21 @@ dev_dependencies:
 flutter:
 
   # To add assets to your package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/images/
+    - assets/Budapest/
+    - assets/buttons/
+    - assets/London/
+    - assets/Paris/
+    - assets/Pisa/
+    - assets/Small-Cards/
+    - assets/
+
+
+
+
+
+
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/to/asset-from-package

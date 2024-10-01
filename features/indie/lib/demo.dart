@@ -13,11 +13,13 @@ class Indie3dHome extends StatefulWidget {
     return MaterialPageRoute(
         settings: settings, builder: (context) => const Indie3dHome());
   }
+
   @override
   State createState() => _Indie3dHomeState();
 }
 
-class _Indie3dHomeState extends State<Indie3dHome> with TickerProviderStateMixin {
+class _Indie3dHomeState extends State<Indie3dHome>
+    with TickerProviderStateMixin {
   static const _duration = Duration(milliseconds: 400);
   late final _page0TopTitleController = _createController(1.0);
   late final _page0BottomTitleController = _createController(1.0);
@@ -25,7 +27,8 @@ class _Indie3dHomeState extends State<Indie3dHome> with TickerProviderStateMixin
   late final _page1BottomTitleController = _createController();
   late final _page2TopTitleController = _createController();
   late final _page2BottomTitleController = _createController();
-  late final _controller = Indie3dModelController()..addListener(() => setState(() {}));
+  late final _controller = Indie3dModelController()
+    ..addListener(() => setState(() {}));
   final List<AnimationController> _controllers = [];
   int _pageIndex = 0;
 
@@ -38,7 +41,8 @@ class _Indie3dHomeState extends State<Indie3dHome> with TickerProviderStateMixin
 
   AnimationController _createController([double value = 0]) {
     _controllers.add(
-      AnimationController(vsync: this, duration: _duration, value: value)..addListener(() => setState(() {})),
+      AnimationController(vsync: this, duration: _duration, value: value)
+        ..addListener(() => setState(() {})),
     );
     return _controllers.last;
   }
@@ -46,10 +50,21 @@ class _Indie3dHomeState extends State<Indie3dHome> with TickerProviderStateMixin
   @override
   Widget build(context) {
     if (!_controller.initialized) {
-      precacheImage(AssetImage('images/artist_1.png', package: App.pkg), context);
-      precacheImage(AssetImage('images/artist_2.png', package: App.pkg), context);
-      precacheImage(AssetImage('images/artist_3.png', package: App.pkg), context);
-      precacheImage(AssetImage('images/noise.png', package: App.pkg), context);
+      precacheImage(
+          AssetImage('packages/preferences/assets/artist_1.png',
+              package: App.pkg),
+          context);
+      precacheImage(
+          AssetImage('packages/preferences/assets/artist_2.png',
+              package: App.pkg),
+          context);
+      precacheImage(
+          AssetImage('packages/preferences/assets/artist_3.png',
+              package: App.pkg),
+          context);
+      precacheImage(
+          AssetImage('packages/preferences/assets/noise.png', package: App.pkg),
+          context);
 
       _controller.init(context);
     }
@@ -101,7 +116,8 @@ class _Indie3dHomeState extends State<Indie3dHome> with TickerProviderStateMixin
           topTitle: 'MILES',
           bottomTitle: 'MILLER',
           backgroundColor: Color(0xFF0DD479),
-          image: AssetImage('images/artist_1.png', package: App.pkg),
+          image: AssetImage('packages/preferences/assets/artist_1.png',
+              package: App.pkg),
           pageIndex: 0,
           controller: _controller,
           topTitleClipProgress: 1.0 - _page0TopTitleController.value,
@@ -114,7 +130,8 @@ class _Indie3dHomeState extends State<Indie3dHome> with TickerProviderStateMixin
           topTitle: 'BRET',
           bottomTitle: 'HAMPTON',
           backgroundColor: Color(0xFFECA6C8),
-          image: AssetImage('images/artist_2.png', package: App.pkg),
+          image: AssetImage('packages/preferences/assets/artist_2.png',
+              package: App.pkg),
           pageIndex: 1,
           controller: _controller,
           topTitleClipProgress: 1.0 - _page1TopTitleController.value,
@@ -129,7 +146,8 @@ class _Indie3dHomeState extends State<Indie3dHome> with TickerProviderStateMixin
           topTitle: 'CINDY',
           bottomTitle: 'GREY',
           backgroundColor: Color(0xFFFFD500),
-          image: AssetImage('images/artist_3.png', package: App.pkg),
+          image: AssetImage('packages/preferences/assets/artist_3.png',
+              package: App.pkg),
           pageIndex: 2,
           controller: _controller,
           topTitleClipProgress: 1.0 - _page2TopTitleController.value,
@@ -143,9 +161,14 @@ class _Indie3dHomeState extends State<Indie3dHome> with TickerProviderStateMixin
   bool _handleScroll(ScrollUpdateNotification scrollUpdate) {
     setState(() {
       final appSize = MediaQuery.of(context).size;
-      double pageProgress =
-          (1.0 - ((scrollUpdate.metrics.pixels / appSize.width) - _pageIndex).abs().clamp(0.0, 1.0)) * 2.0 - 1.0;
-      _controller.cameraOffset = (1 - pageProgress) * 8.0 * (scrollUpdate.scrollDelta?.sign ?? 1);
+      double pageProgress = (1.0 -
+                  ((scrollUpdate.metrics.pixels / appSize.width) - _pageIndex)
+                      .abs()
+                      .clamp(0.0, 1.0)) *
+              2.0 -
+          1.0;
+      _controller.cameraOffset =
+          (1 - pageProgress) * 8.0 * (scrollUpdate.scrollDelta?.sign ?? 1);
 
       double animValue = 0;
       switch (_pageIndex) {
@@ -186,7 +209,8 @@ class _Indie3dHomeState extends State<Indie3dHome> with TickerProviderStateMixin
         case 0:
           if (pageProgress > 0.99) {
             _page0TopTitleController.animateTo(1.0);
-            Future.delayed(Duration(milliseconds: 200), () => _page0BottomTitleController.animateTo(1.0));
+            Future.delayed(Duration(milliseconds: 200),
+                () => _page0BottomTitleController.animateTo(1.0));
           }
           _page1TopTitleController.reset();
           _page1BottomTitleController.reset();
@@ -198,7 +222,8 @@ class _Indie3dHomeState extends State<Indie3dHome> with TickerProviderStateMixin
           _page0BottomTitleController.reset();
           if (pageProgress > 0.99) {
             _page1TopTitleController.animateTo(1.0);
-            Future.delayed(Duration(milliseconds: 200), () => _page1BottomTitleController.animateTo(1.0));
+            Future.delayed(Duration(milliseconds: 200),
+                () => _page1BottomTitleController.animateTo(1.0));
           }
           _page2TopTitleController.reset();
           _page2BottomTitleController.reset();
@@ -210,7 +235,8 @@ class _Indie3dHomeState extends State<Indie3dHome> with TickerProviderStateMixin
           _page1BottomTitleController.reset();
           if (pageProgress > 0.99) {
             _page2TopTitleController.animateTo(1.0);
-            Future.delayed(Duration(milliseconds: 200), () => _page2BottomTitleController.animateTo(1.0));
+            Future.delayed(Duration(milliseconds: 200),
+                () => _page2BottomTitleController.animateTo(1.0));
           }
           break;
       }

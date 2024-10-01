@@ -52,8 +52,8 @@ class BasketballGameModel {
             awayTeamName: 'Flutters',
             homeTeamCity: 'New York',
             awayTeamCity: 'Edmonton',
-            homeTeamLogoPath: 'assets/viking.png',
-            awayTeamLogoPath: 'assets/f.png',
+            homeTeamLogoPath: 'packages/preferences/assets/viking.png',
+            awayTeamLogoPath: 'packages/preferences/assets/f.png',
           ),
           BasketballGameData(
             quarter: BasketballGameQuarter.Q4,
@@ -64,8 +64,8 @@ class BasketballGameModel {
             awayTeamName: 'Stars',
             homeTeamCity: 'Birmingham',
             awayTeamCity: 'Seattle',
-            homeTeamLogoPath: 'assets/flutter.png',
-            awayTeamLogoPath: 'assets/badge.png',
+            homeTeamLogoPath: 'packages/preferences/assets/flutter.png',
+            awayTeamLogoPath: 'packages/preferences/assets/badge.png',
           ),
           BasketballGameData(
             quarter: BasketballGameQuarter.Q4,
@@ -76,8 +76,8 @@ class BasketballGameModel {
             awayTeamName: 'Cannons',
             homeTeamCity: 'LA',
             awayTeamCity: 'Dallas',
-            homeTeamLogoPath: 'assets/light.png',
-            awayTeamLogoPath: 'assets/maroon.png',
+            homeTeamLogoPath: 'packages/preferences/assets/light.png',
+            awayTeamLogoPath: 'packages/preferences/assets/maroon.png',
           ),
           BasketballGameData(
             quarter: BasketballGameQuarter.FINISHED,
@@ -87,8 +87,8 @@ class BasketballGameModel {
             awayTeamName: 'Birds',
             homeTeamCity: 'New York',
             awayTeamCity: 'Birmingham',
-            homeTeamLogoPath: 'assets/viking.png',
-            awayTeamLogoPath: 'assets/flutter.png',
+            homeTeamLogoPath: 'packages/preferences/assets/viking.png',
+            awayTeamLogoPath: 'packages/preferences/assets/flutter.png',
           ),
           BasketballGameData(
             quarter: BasketballGameQuarter.FINISHED,
@@ -98,8 +98,8 @@ class BasketballGameModel {
             awayTeamName: 'Dribblers',
             homeTeamCity: 'Edmonton',
             awayTeamCity: 'LA',
-            homeTeamLogoPath: 'assets/f.png',
-            awayTeamLogoPath: 'assets/light.png',
+            homeTeamLogoPath: 'packages/preferences/assets/f.png',
+            awayTeamLogoPath: 'packages/preferences/assets/light.png',
           ),
           BasketballGameData(
             quarter: BasketballGameQuarter.HALF_TIME,
@@ -109,8 +109,8 @@ class BasketballGameModel {
             awayTeamName: 'Flutters',
             homeTeamCity: 'New York',
             awayTeamCity: 'Edmonton',
-            homeTeamLogoPath: 'assets/viking.png',
-            awayTeamLogoPath: 'assets/f.png',
+            homeTeamLogoPath: 'packages/preferences/assets/viking.png',
+            awayTeamLogoPath: 'packages/preferences/assets/f.png',
           ),
           BasketballGameData(
             quarter: BasketballGameQuarter.Q4,
@@ -121,8 +121,8 @@ class BasketballGameModel {
             awayTeamName: 'Stars',
             homeTeamCity: 'Birmingham',
             awayTeamCity: 'Seattle',
-            homeTeamLogoPath: 'assets/flutter.png',
-            awayTeamLogoPath: 'assets/badge.png',
+            homeTeamLogoPath: 'packages/preferences/assets/flutter.png',
+            awayTeamLogoPath: 'packages/preferences/assets/badge.png',
           ),
           BasketballGameData(
             quarter: BasketballGameQuarter.Q4,
@@ -133,8 +133,8 @@ class BasketballGameModel {
             awayTeamName: 'Cannons',
             homeTeamCity: 'LA',
             awayTeamCity: 'Dallas',
-            homeTeamLogoPath: 'assets/light.png',
-            awayTeamLogoPath: 'assets/maroon.png',
+            homeTeamLogoPath: 'packages/preferences/assets/light.png',
+            awayTeamLogoPath: 'packages/preferences/assets/maroon.png',
           ),
           BasketballGameData(
             quarter: BasketballGameQuarter.FINISHED,
@@ -144,8 +144,8 @@ class BasketballGameModel {
             awayTeamName: 'Birds',
             homeTeamCity: 'New York',
             awayTeamCity: 'Birmingham',
-            homeTeamLogoPath: 'assets/viking.png',
-            awayTeamLogoPath: 'assets/flutter.png',
+            homeTeamLogoPath: 'packages/preferences/assets/viking.png',
+            awayTeamLogoPath: 'packages/preferences/assets/flutter.png',
           ),
           BasketballGameData(
             quarter: BasketballGameQuarter.FINISHED,
@@ -155,8 +155,8 @@ class BasketballGameModel {
             awayTeamName: 'Dribblers',
             homeTeamCity: 'Edmonton',
             awayTeamCity: 'LA',
-            homeTeamLogoPath: 'assets/f.png',
-            awayTeamLogoPath: 'assets/light.png',
+            homeTeamLogoPath: 'packages/preferences/assets/f.png',
+            awayTeamLogoPath: 'packages/preferences/assets/light.png',
           ),
         ];
 
@@ -179,12 +179,12 @@ class BasketballGameModel {
       'Knights',
     ];
     const List<String> logoPaths = [
-      'assets/badge.png',
-      'assets/f.png',
-      'assets/flutter.png',
-      'assets/light.png',
-      'assets/maroon.png',
-      'assets/viking.png',
+      'packages/preferences/assets/badge.png',
+      'packages/preferences/assets/f.png',
+      'packages/preferences/assets/flutter.png',
+      'packages/preferences/assets/light.png',
+      'packages/preferences/assets/maroon.png',
+      'packages/preferences/assets/viking.png',
     ];
     for (int i = 0; i < 10; ++i) {
       int homeTeam = rng.nextInt(6);
@@ -195,7 +195,8 @@ class BasketballGameModel {
 
       basketballGames.add(
         BasketballGameData(
-          quarter: BasketballGameQuarter.values[rng.nextInt(BasketballGameQuarter.values.length)],
+          quarter: BasketballGameQuarter
+              .values[rng.nextInt(BasketballGameQuarter.values.length)],
           time: Duration(minutes: rng.nextInt(30), seconds: rng.nextInt(60)),
           homeTeamScore: rng.nextInt(160),
           awayTeamScore: rng.nextInt(160),

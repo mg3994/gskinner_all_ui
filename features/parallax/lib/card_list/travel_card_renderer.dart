@@ -65,19 +65,19 @@ class TravelCardRenderer extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         children: <Widget>[
           offsetLayer(
-            "images/${city.name}/${city.name}-Back.png",
+            "packages/preferences/assets/${city.name}/${city.name}-Back.png",
             containerWidth * .8,
             maxParallax * .1,
             globalOffset,
           ),
           offsetLayer(
-            "images/${city.name}/${city.name}-Middle.png",
+            "packages/preferences/assets/${city.name}/${city.name}-Middle.png",
             containerWidth * .9,
             maxParallax * .6,
             globalOffset,
           ),
           offsetLayer(
-            "images/${city.name}/${city.name}-Front.png",
+            "packages/preferences/assets/${city.name}/${city.name}-Front.png",
             containerWidth * .9,
             maxParallax,
             globalOffset,
